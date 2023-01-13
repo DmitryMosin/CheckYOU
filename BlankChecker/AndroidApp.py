@@ -172,9 +172,9 @@ class ConstructorPageTwo(Screen):
         current_y = 0.75
         fl = self.ids.constructor_two_layout
         for i in range(int(DataInput.count_variants)):
-            label = Label(text=f'{i+1} Вариант)', pos_hint={'center_x': 0.17, 'center_y': current_y},
+            label = Label(text=f'Вариант {i+1}', pos_hint={'center_x': 0.17, 'center_y': current_y},
                                 color=[0, 0, 0, 0.5])
-            textinput = kivy.uix.textinput.TextInput(size_hint=[0.6, 0.05], font_size=10,
+            textinput = kivy.uix.textinput.TextInput(size_hint=[0.6, 0.05], font_size=12,
                                                        pos_hint={'center_x': 0.64, 'center_y': current_y})
             self.textInputs.append(textinput)
             self.labels.append(label)
@@ -280,8 +280,8 @@ class TestApp(App):
         self.screen_manager.add_widget(TutorialPageFour(name='tutorial_page_4'))
         self.screen_manager.add_widget(TutorialPageFive(name='tutorial_page_5'))
         self.screen_manager.add_widget(ConstructorPageOne(name='constructor_page_1'))
-        self.screen_manager.add_widget(ConstructorPageTwo(name='constructor_page_2'))
         self.screen_manager.add_widget((DownloadPicturePage(name='download_picture_page')))
+        self.screen_manager.add_widget(ConstructorPageTwo(name='constructor_page_2'))
         self.screen_manager.add_widget(GalleryPictures(name='gallery_pictures'))
         self.screen_manager.add_widget(ResultsPage(name='results_page'))
         return self.screen_manager
